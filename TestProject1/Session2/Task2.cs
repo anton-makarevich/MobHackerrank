@@ -1,7 +1,7 @@
 using System.Linq;
 using Xunit;
 
-namespace TestProject1
+namespace TestProject1.Session2
 {
     public class UnitTest2
     {

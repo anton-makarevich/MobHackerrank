@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace TestProject1
+namespace TestProject1.Session2
 {
     public class UnitTest1
     {
@@ -17,19 +16,9 @@ namespace TestProject1
         }
 
         string IsPangram(string testString) {
-            const string nonPangram = "not pangram";
-            const string pangram = "pangram";
-            
-            var map = new List<char>();
-            
-            foreach (var character in testString.ToLower()
-                .Where(char.IsLetter)
-                .Where(character => !map.Contains(character)))
-                map.Add(character);
-            
-            return map.Count<26
-                ? nonPangram
-                : pangram;
+            return testString.ToLower().Where(char.IsLetter).Distinct().Count() < 26
+                ? "not pangram"
+                : "pangram";;
         }
     }
 }
